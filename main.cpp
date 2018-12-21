@@ -17,6 +17,6 @@ int main() {
         this_thread::sleep_for(chrono::milliseconds(50));
     }
 
-    cout << "Hellaaaaaao World!" << endl;
+    cout << "Hello World!" << endl;
     return 0;
 }
