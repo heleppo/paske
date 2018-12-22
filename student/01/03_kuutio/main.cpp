@@ -8,6 +8,12 @@ int main()
     int num = 0;
     cout << "Enter a number: ";
     cin >> num;
-    cout << "The cube of " << num << " is "
-         << num*num*num << "." << endl;
+    int cube = num*num*num;
+    if ( cube % num == 0 ) {
+        cout << "The cube of " << num << " is "
+             << cube << "." << endl;
+    } else {
+        cout << "Error! The cube of " << num <<
+             " is not " << cube << endl;
+    }
 }
