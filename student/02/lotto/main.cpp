@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// max factorial = 20
 long long int factorial(int num) {
     if ( num == 0 ) {
         return 1;
@@ -21,14 +22,13 @@ long long int chance(int n, int p) {
 }
 
 int main() {
-//    int total = 0;
-//    int drawn = 0;
-//    cout << "Enter the total number of lottery balls: ";
-//    cin >> total;
-//    cout << "Enter the number of the drawn balls: ";
-//    cin >> drawn;
-//    cout << "The probability of guessing all 4 balls "
-//            "correctly is 1/" << chance(total, drawn)
-//         << endl;
-    cout << factorial(20);
+    int total = 0;
+    int drawn = 0;
+    cout << "Enter the total number of lottery balls: ";
+    cin >> total;
+    cout << "Enter the number of the drawn balls: ";
+    cin >> drawn;
+    cout << "The probability of guessing all "
+         << drawn << " balls correctly is 1/"
+         << chance(total, drawn) << endl;
 }
