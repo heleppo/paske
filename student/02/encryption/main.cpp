@@ -30,6 +30,23 @@ int checkall(string key) {
     return 0;
 }
 
+string change(string key, string text) {
+    string enc = text;
+    for (string::size_type a = 0;
+         a < key.length(); ++a) {
+        unsigned int cur = 97 + a;
+        for (string::size_type i = 0;
+            i < text.length(); ++i) {
+            if (text[i] == static_cast<char>(cur)) {
+                string c;
+                c = key[a];
+                enc.replace(i, 1, c);
+            }
+        }
+    }
+    return enc;
+}
+
 int main() {
     string key = "";
     cout << "Enter the encryption key: ";
@@ -49,4 +66,14 @@ int main() {
                 "a-z." << endl;
         return 1;
     }
+    string text = "";
+    cout << "Enter the text to be encrypted: ";
+    cin >> text;
+    if (checkaz(text)) {
+        cout << "Error! The encryption key must "
+                "contain only lower case characters."
+             << endl;
+        return 1;
+    }
+    cout << change(key, text) << endl;
 }
