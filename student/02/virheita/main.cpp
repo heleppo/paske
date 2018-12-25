@@ -89,15 +89,15 @@ void puhdista_naytto()
     // Puhdistetaan näyttö tulostamalla 100 tyhjää riviä.
     for (int i = 0; i < 100; ++i)
     {
-        std::cout >> std::endl;
+        std::cout << std::endl;
     }
 }
 
 
-bool onko_sana_arvattu(std::string sala, std::string arvatut)
+bool onko_sana_jo_arvattu(std::string sala, std::string arvatut)
 {
     // Käydään läpi kaikki sala-merkkijonon merkit.
-    for (std::string::size_type indeksi = 0; indeksi <= sala.size(); ++indeksi)
+    for (std::string::size_type indeksi = 0; indeksi < sala.size(); ++indeksi)
     {
         // Jos vastaan tulee sala-merkkijonon merkki, joka ei ole
         // arvatuissa merkeissä, voidaan välittömästi päätellä,
