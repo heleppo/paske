@@ -1,6 +1,6 @@
 #include <iostream>
 #include <thread>
-
+#include "koira.cpp"
 
 using namespace std;
 
@@ -18,5 +18,6 @@ int main() {
     }
 
     cout << "Hello World!" << endl;
+    cout << koira();
     return 0;
 }

@@ -5,4 +5,4 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    lista.cpp
+    koira.cpp
