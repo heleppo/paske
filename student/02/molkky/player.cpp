@@ -13,13 +13,21 @@ string Player::get_name() const {
 }
 
 int Player::get_points() const {
-    return 1;
+    return pts_;
 }
 
 int Player::has_won() {
-    return 1;
+    if (pts_ == 50) {
+        return 1;
+    }
+    return 0;
 }
 
 void Player::add_points(int pts) {
-    pts_ = pts;
+    pts_ += pts;
+    if (pts_ > 50) {
+        pts_ = 25;
+        cout << name_ << " gets penalty points!"
+             << endl;
+    }
 }

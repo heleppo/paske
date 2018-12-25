@@ -3,6 +3,7 @@
 #include<iostream>
 
 using namespace std;
+//haista vittu
 
 class Player
 {
@@ -14,7 +15,7 @@ public:
     void add_points(int pts);
 private:
     string name_;
-    int pts_;
+    int pts_ = 0;
 };
 
 #endif // PLAYER_H
