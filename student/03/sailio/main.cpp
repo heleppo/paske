@@ -62,13 +62,19 @@ bool is_arithmetic_series(std::vector<int> ints)
 
 bool is_geometric_series(std::vector<int> ints)
 {
-    if (ints.size() == 1 or ints.size() == 2)
+    if (ints.size() == 1)
     {
-        return 1;
+        return 0;
     }
-    double relation1 = ints[0];
-    double relation2 = ints[1];
-    if (round(100*relation1) == round(100*relation2))
+    int sum = 0;
+    for (unsigned int i = 0; i < ints.size(); i++)
+    {
+        sum += ints[i];
+    }
+    double q = (static_cast<double>(ints[ints.size()-1]) /
+                static_cast<double>(ints[ints.size()-2]));
+    double formula = (ints[0]*(1-pow(q,ints.size())))/(1-q);
+    if (sum == round(formula))
     {
         return 1;
     }
@@ -103,10 +109,10 @@ int main()
     else
         std::cout << "The integers do not form an arithmetic series" << std::endl;
 
-//    if(is_geometric_series(integers))
-//        std::cout << "The integers form a geometric series" << std::endl;
-//    else
-//        std::cout << "The integers do not form a geometric series" << std::endl;
+    if(is_geometric_series(integers))
+        std::cout << "The integers form a geometric series" << std::endl;
+    else
+        std::cout << "The integers do not form a geometric series" << std::endl;
 
     return EXIT_SUCCESS;
 }
