@@ -86,7 +86,7 @@ bool is_geometric_series(std::vector<int> ints)
 
 int main()
 {
-    std::cout << "How many integers are theree? ";
+    std::cout << "How many integers are there? ";
     int how_many = 0;
     std::cin >> how_many;
 
